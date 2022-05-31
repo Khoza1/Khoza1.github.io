@@ -1,5 +1,7 @@
 
-let da = document.querySelector('.informa');
+
+let da =  document.querySelector('.informa');
+
 
 function valorcompiler(){
     let dic = { 
@@ -27,11 +29,20 @@ function valorcompiler(){
         'static':'static comando estatico',
         'struct':'struct comando para estrutura',
         'try':'comando para exceçao',
+        '+':'operador logico de adicçao',
+        '-':'operador logico de subtraçao',
+        '*':'operador logico de multiplicaçao',
+        '/':'operador logico de divisao',
+        '&':'operador logico e',
+        '||':'operador logico ou',
+        '<':'operador logico menor',
+        '>':'operador logico maior',
+        '=':'operador logico igual',
 
     }   
 
-    if((dic[da.value])){
-        document.querySelector('.resultados').innerHTML= (dic[da.value]);
+    if((dic[da.value.trim()])){
+        document.querySelector('.resultados').innerHTML= (dic[da.value.trim()]);
         document.querySelector('.resultados').style.backgroundColor = 'green';
         document.querySelector('h2').innerHTML= "ok 200 palavra reservada encotrada";
     }  
@@ -41,6 +52,22 @@ function valorcompiler(){
         document.querySelector('.resultados').style.backgroundColor = 'violet';
         document.querySelector('h2').innerHTML= "fail 404 espaço vazio";
     }
+
+    else if(da.value.trim()=='ajuda'){
+        alert(
+            
+            'Espreçoes suportadas no anlizador lexica Khoza v1\nfloat, if, else, for,\n,typedef,int, switch, case, char, long, default\n double, short, while, do, break, delete,sizeof\ntemplate,return, static,struct ,try,+, -, *, /, &, ||, <, >, ='
+        )
+    }
+
+    else if(da.value.trim()=='Alcamate'){
+        alert(
+            
+            'Alcamate Dossa docente do curço de eng informatica\n Programa criado pelo estudante Felix Juliano Antonio Khoza'
+        )
+    }
+
+
     else{
         document.querySelector('.resultados').innerHTML= 'O nalisador lexical identficou essa palavra\t'+(da.value)+'\tcomo nao reservada';
         document.querySelector('.resultados').style.backgroundColor = 'red';
