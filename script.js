@@ -2,6 +2,7 @@
 
 let da =  document.querySelector('.informa');
 
+alert('digita =ajuda= no campo para saber mais ');
 
 function valorcompiler(){
     let dic = { 
@@ -39,7 +40,7 @@ function valorcompiler(){
         '>':'operador logico maior',
         '=':'operador logico igual',
 
-    }   
+    }
 
     if((dic[da.value.trim()])){
         document.querySelector('.resultados').innerHTML= (dic[da.value.trim()]);
@@ -47,7 +48,7 @@ function valorcompiler(){
         document.querySelector('h2').innerHTML= "ok 200 palavra reservada encotrada";
     }  
 
-    else if(da.value==""){
+    else if(da.value.trim()==""){
         document.querySelector('.resultados').innerHTML= 'Campo vazio introduza comando na entrada';
         document.querySelector('.resultados').style.backgroundColor = 'violet';
         document.querySelector('h2').innerHTML= "fail 404 espaço vazio";
